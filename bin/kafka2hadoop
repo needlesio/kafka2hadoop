@@ -1,0 +1,2 @@
+#!/bin/sh
+hadoop jar /opt/kafka2hadoop/*.jar kafka2hadoop.Main "$@"
