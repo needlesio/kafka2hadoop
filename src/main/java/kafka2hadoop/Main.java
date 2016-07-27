@@ -104,6 +104,7 @@ public class Main extends Configured implements Tool{
 	    Job job = Job.getInstance(getConf(), "kafka2hadoop");
 	    job.setJarByClass(Main.class);
 	    job.setMapperClass(Kafka2HadoopMapper.class);
+	    job.setNumReduceTasks(0);
 	    
 	    job.setInputFormatClass(SequenceFileInputFormat.class);
 	    SequenceFileInputFormat.addInputPath(job, sourceWatermarksDir);
