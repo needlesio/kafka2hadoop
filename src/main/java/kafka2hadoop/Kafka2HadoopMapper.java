@@ -40,7 +40,7 @@ public class Kafka2HadoopMapper extends Mapper<IntWritable, LongWritable, Text, 
 			TopicPartition topicPartition = new TopicPartition(kafkaTopic, partitionId);
 			kafkaConsumer.assign(Arrays.asList(topicPartition));
 			logger.info("Seeking to topic-partition end");
-			kafkaConsumer.seekToEnd(topicPartition);
+			kafkaConsumer.seekToEnd(Arrays.asList(topicPartition));
 			// Get the most current offset
 			long latestOffset = kafkaConsumer.position(topicPartition);
 			logger.info("Found latest offset of " + latestOffset);
