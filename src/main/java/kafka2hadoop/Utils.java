@@ -19,7 +19,7 @@ public class Utils {
 		 props.put("enable.auto.commit", "false");
 		 props.put("key.deserializer", "org.apache.kafka.common.serialization.ByteArrayDeserializer");
 		 props.put("value.deserializer", "org.apache.kafka.common.serialization.ByteArrayDeserializer");
-		 KafkaConsumer<byte[], byte[]> consumer = new KafkaConsumer<byte[], byte[]>(props);
+		 KafkaConsumer<byte[], byte[]> consumer = new KafkaConsumer<>(props);
 		 return consumer;
 	}
 	
