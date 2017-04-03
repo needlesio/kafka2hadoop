@@ -1,0 +1,38 @@
+group 'io.needles'
+version '1.0-SNAPSHOT'
+
+defaultTasks 'clean', 'shadowJar'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.4'
+    }
+}
+
+apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    hadoopVersion = '2.7.3'
+    kafkaVersion = '0.10.2.0'
+}
+
+dependencies {
+    compileOnly group: 'org.apache.hadoop', name: 'hadoop-common', version: hadoopVersion
+    compileOnly group: 'org.apache.hadoop', name: 'hadoop-mapreduce-client-jobclient', version: hadoopVersion
+    compile group: 'org.apache.kafka', name: 'kafka-clients', version: kafkaVersion
+
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile "org.mockito:mockito-core:2.0.57-beta"
+    testCompile group: 'org.apache.hadoop', name: 'hadoop-common', version: hadoopVersion
+    testCompile group: 'org.apache.hadoop', name: 'hadoop-mapreduce-client-jobclient', version: hadoopVersion
+}

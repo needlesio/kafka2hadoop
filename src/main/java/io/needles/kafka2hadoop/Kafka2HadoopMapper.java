@@ -1,4 +1,4 @@
-package kafka2hadoop;
+package io.needles.kafka2hadoop;
 
 import java.io.IOException;
 import java.util.Arrays;

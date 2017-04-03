@@ -1,4 +1,4 @@
-package kafka2hadoop;
+package io.needles.kafka2hadoop;
 
 import java.util.HashMap;
 import java.util.List;
@@ -41,7 +41,7 @@ public class Main extends Configured implements Tool{
 		Configuration conf = getConf();
 	    if(args.length != 4){
 	    	System.err.println(
-	    			  "Expected exactly 5 arguments\n"
+	    			  "Expected exactly 4 arguments\n"
 	    			+ "  1. The kafka broker connection string\n"
 	    			+ "  2. The kafka topic to fetch\n"
 	    			+ "  3. The hadoop destination directory\n"
