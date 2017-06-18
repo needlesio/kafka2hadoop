@@ -15,6 +15,7 @@ public class Utils {
 	static KafkaConsumer<byte[], byte[]> kafkaConsumer(String connectionString){
 		 Properties props = new Properties();
 		 props.put("bootstrap.servers", connectionString);
+		 props.put("auto.offset.reset", "earliest");
 		 props.put("group.id", "kafka2hadoop");
 		 props.put("enable.auto.commit", "false");
 		 props.put("key.deserializer", "org.apache.kafka.common.serialization.ByteArrayDeserializer");
